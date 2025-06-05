@@ -1,18 +1,16 @@
 import { Request, Response } from 'express';
-import { AppDataSource } from '../database/data-source';
+import { AppDataSource } from '../config/data-source';
 import { Order } from '../models/Order';
 
 const userRepository = AppDataSource.getRepository(Order);
 
 export class OrderController {
-    // Listar todos os usuários
     async list(req: Request, res: Response) {
         const users = await userRepository.find();
         res.json(users);
         return
     }
 
-    // Criar novo usuário
     async create(req: Request, res: Response) {
         const { status } = req.body;
 
@@ -57,8 +55,6 @@ export class OrderController {
         res.json(user);
         return
     }
-
-    // Deletar usuário
     async delete(req: Request, res: Response) {
         const { id } = req.params;
 

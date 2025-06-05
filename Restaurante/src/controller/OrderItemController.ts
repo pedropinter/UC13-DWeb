@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AppDataSource } from "../database/data-source";
+import { AppDataSource } from "../config/data-source";
 import { OrderItem } from "../models/OrderItem";
 import { Order } from "../models/Order";
 import { Dish } from "../models/Dish";
